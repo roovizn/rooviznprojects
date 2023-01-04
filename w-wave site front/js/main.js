@@ -1,6 +1,6 @@
 let validation = new JustValidate('#form',{
   errorLabelStyle: {
-
+    color: 'red'
   }
 })
 
@@ -91,3 +91,14 @@ document.addEventListener('DOMContentLoaded', (e) => {
     document.getElementById ('accordion-header').classList.add('accordion-header__colapsed')
   })
 })
+
+
+document.addEventListener("DOMContentLoaded", function(){
+    document.getElementById("burger").addEventListener("click", function(){
+      document.querySelector(".header-top").classList.toggle("open")
+      document.querySelector(".header-top-nav").classList.toggle("open")
+      document.querySelector(".header-bottom-nav").classList.toggle("open")
+      document.querySelector(".header-bottom").classList.toggle("open")
+
+    })
+  })
