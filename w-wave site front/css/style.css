@@ -194,7 +194,9 @@ body{
     align-items: center;
     position: relative;
 }
-
+.position{
+    position: inherit;
+}
 .header-top-nav{
 
     justify-content: space-between;
@@ -255,9 +257,6 @@ body{
     margin-left: 60px;
 }
 
-.search-form__input{
-    padding-right: 0;
-}
 
 .search-form{
     align-items: center;
@@ -915,7 +914,6 @@ body{
 
 
 .choices {
-    max-width: 255px;
     font-family: inherit;
     margin: 0;
     display: inline-block;
@@ -1194,7 +1192,7 @@ body{
     stroke: #A1A6B4;
     fill: none;
 }
-.artists__name{
+.artists__btn{
     font-family: 'Muller';
     font-style: normal;
     font-weight: 300;
@@ -1202,10 +1200,21 @@ body{
     line-height: 16px;
     color: #FFFFFF;
     margin-bottom: 16px;
-
 }
 
-.artists__list:not(:last-child){
+
+
+.artists__list{
+    max-height: 179px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+.artists__item--active{
+    color: #6D31EE;
+}
+.artists__item{
     margin-right: 30px;
 }
 
@@ -1214,6 +1223,10 @@ body{
     margin-right: 30px;
 }
 
+
+.guests-card--active{
+    display: block;
+}
 
 
 
@@ -1246,7 +1259,7 @@ body{
 }
 
 .guests-card__btn{
-    border: 2px solid #AA9DFA;
+    outline: 2px solid #AA9DFA;
     padding: 12px 19px;
     border-radius: 77px;
     font-weight: 500;
@@ -1273,11 +1286,22 @@ body{
 .guests-card{
     flex-direction: column;
     flex-basis: 30%;
-    align-items: flex-start
+    align-items: flex-start;
+    display: none;
+
 }
 
+.guests-card--active{
+    display: flex;
+}
+
+.artists__btn--active{
+    color: #AA9DFA;
+}
+
+
+
 .guests-card__img{
-    background-image: url("../img/image\ 1.png");
     width: 350px;
     height: 220px;
     margin-bottom: 12px;
@@ -1361,7 +1385,9 @@ body{
     z-index: 5;
     overflow: visible;
 }
-
+.display-block{
+    display: block;
+}
 .disclaimer-768{
     display: none;
 }
@@ -1601,6 +1627,7 @@ body{
     margin-right: 30px;
     background-repeat: no-repeat;
     position: 0 0;
+    flex-basis: 20%;
     position: relative;
 }
 
@@ -1670,11 +1697,12 @@ body{
 
 
 .swiper {
-    max-width: 1110px;
-    height: 361px;
+    max-width: calc(100% - 200px);
     margin: 0 auto;
     overflow: hidden;
+    padding-bottom: 50px;
 }
+
 .swiper-slide__dscr{
     font-weight: 400;
     font-size: 16px;
@@ -1683,6 +1711,11 @@ body{
 }
 .swiper-slide__img{
     margin-bottom: 30px;
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    max-height: 255px;
+
 }
 .swiper-slide__subtitle{
     font-weight: 500;
@@ -1694,11 +1727,13 @@ body{
     position: absolute;
     left: 0px;
     top: 140px;
+    margin-left: 20px;
 }
 
 .swiper-button-next{
     position: absolute;
     right: 0px;
+    margin-right: 20px;
     top: 140px;
 }
 
@@ -1726,7 +1761,7 @@ body{
 
 .swiper-slide__content{
     height: 300px;
-    max-width: 255px;
+
 }
 .about-us__form{
     flex-wrap: wrap;
